@@ -1,11 +1,54 @@
+$font-inter: 'Inter', sans-serif;
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $font-inter;
+}
+.text-regular {
+  font-weight: $regular;
+}
+.text-semibold {
+  font-weight: $semi-bold;
+}
+.text-bold {
+  font-weight: $bold;
+}
+
 :root {
   --color-bg: #ffffff;
   --color-text: #000000;
+  --gradient: linear-gradient(
+    to left,
+    #84fab0 0%,
+    #85f9bc 0%,
+    #88f8d7 0%,
+    #8bf6f5 0%,
+    #8eddf5 0%,
+    #8fd3f4 0%,
+    #f0c3fc 0%,
+    #d7befc,
+    #bcb1fc,
+    #a1aefc,
+    #94bdfc,
+    #94bdfc
+  );
 }
 
 .dark {
   --color-bg: #121212;
   --color-text: #ffffff;
+  --gradient: linear-gradient(to left, #1a1a2e 0%, #16213e 50%, #1a1a40 100%);
 }
 
 body {
