@@ -5,10 +5,7 @@ export interface InputProps {
 }
 
 export interface TaskInterface {
-  tasks: {
-    id: number;
-    task: string;
-    completed: boolean;
-  };
-  newTask: string;
+  id: number;
+  title: string;
+  completed: boolean;
 }

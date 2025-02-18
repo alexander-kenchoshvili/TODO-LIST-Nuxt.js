@@ -3,18 +3,30 @@ import type { TaskInterface } from '~/types/ContentType';
 
 export const useTaskStore = defineStore('tasks', {
   state: () => ({
-    tasks: [] as TaskInterface['tasks'][],
-    newTask: '' as TaskInterface['newTask'],
+    tasks: [] as TaskInterface[],
+    newTask: '',
   }),
   actions: {
     addTask() {
       if (this.newTask.trim()) {
         this.tasks.push({
           id: Date.now(),
-          task: this.newTask.trim(),
+          title: this.newTask.trim(),
           completed: false,
         });
         this.newTask = '';
+      }
+    },
+    toggleTaskStatus(taskId: number) {
+      const task = this.tasks.find((t) => t.id === taskId);
+      if (task) {
+        task.completed = !task.completed;
+      }
+    },
+    updateTask(id: number, newTitle: string) {
+      const task = this.tasks.find((task) => task.id === id);
+      if (task) {
+        task.title = newTitle.trim();
       }
     },
     removeTask(id: number) {

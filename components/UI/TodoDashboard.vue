@@ -26,10 +26,14 @@ const taskStore = useTaskStore();
         placeholder="Add new todo..."
       />
       <Transition name="fade">
-        <BaseButton @click="taskStore.addTask" v-if="taskStore.newTask" />
+        <BaseButton
+          @click="taskStore.addTask"
+          v-if="taskStore.newTask"
+          text="submit"
+        />
       </Transition>
     </div>
-    <div>{{ taskStore.tasks }}</div>
+    <TaskList />
     <div v-if="!taskStore.tasks.length" class="todo-list__bottom">
       <BottomIcon class="todo-list__bottom--icon" />
       <p class="todo-list__bottom--text">
