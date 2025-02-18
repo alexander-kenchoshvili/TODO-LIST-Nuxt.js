@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import DARK from '~/assets/icons/DARK.vue';
-import LIGHT from '~/assets/icons/LIGHT.vue';
+import DARK from '@/assets/icons/DarkIcon.vue';
+import LIGHT from '@/assets/icons/LightIcon.vue';
 
 const { $isDarkMode: isDarkMode, $toggleTheme: toggleTheme } = useNuxtApp();
-const mode = computed(() => isDarkMode.value);
 </script>
 
 <template>

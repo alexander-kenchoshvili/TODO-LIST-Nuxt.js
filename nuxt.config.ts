@@ -8,6 +8,9 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  alias: {
+    '@types': './types',
+  },
 
   vite: {
     assetsInclude: ['**/*.woff', '**/*.woff2'],
