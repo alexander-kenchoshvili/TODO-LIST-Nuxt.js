@@ -55,6 +55,8 @@ body {
   --scroll-bg: rgba(32, 36, 39, 0.1);
   --button-hover: #134896;
   --modal-bg: #e4b238;
+  --progress-title: #202427;
+  --progress-bg: rgba(32, 36, 39, 0.05);
 }
 
 .dark {
@@ -70,6 +72,8 @@ body {
   --scroll-bg: #3ba15c;
   --button-hover: #2c663f;
   --modal-bg: #285a65;
+  --progress-title: #fff;
+  --progress-bg: #285a65;
 }
 
 body {

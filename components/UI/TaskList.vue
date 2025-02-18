@@ -10,7 +10,7 @@ const sortTasks = ref(false);
 const openModal = ref(false);
 const taskData = ref();
 
-const reversedTasks = computed(() =>
+const sortedTasks = computed(() =>
   sortTasks.value ? [...taskStore.tasks] : [...taskStore.tasks].reverse()
 );
 
@@ -39,11 +39,7 @@ const closeModal = () => {
         :class="{ 'task-list__sort--dark': isDarkMode }"
       />
       <ul class="task-list__tasks">
-        <li
-          class="task-list__task"
-          v-for="task in reversedTasks"
-          :key="task.id"
-        >
+        <li class="task-list__task" v-for="task in sortedTasks" :key="task.id">
           <div class="task-list__inner">
             <input
               type="checkbox"
@@ -72,6 +68,7 @@ const closeModal = () => {
         </li>
       </ul>
     </div>
+    <ProgressBar />
   </div>
 
   <teleport to="body">
@@ -88,7 +85,10 @@ const closeModal = () => {
 .task-list {
   margin-top: 40px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+
   &__content {
     position: relative;
   }
