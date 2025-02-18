@@ -1,3 +1,5 @@
+@import '~/assets/scss/mixins/mixins';
+
 $font-inter: 'Inter', sans-serif;
 $regular: 400;
 $semi-bold: 600;
@@ -15,19 +17,21 @@ body {
   height: 100%;
   font-family: $font-inter;
 }
-.text-regular {
-  font-weight: $regular;
-}
+
 .text-semibold {
   font-weight: $semi-bold;
 }
 .text-bold {
   font-weight: $bold;
 }
+.text-regular {
+  font-weight: $regular;
+}
 
 :root {
   --color-bg: #ffffff;
   --color-text: #000000;
+  --switcher-bg: rgba(12, 28, 58, 0.92);
   --gradient: linear-gradient(
     to left,
     #84fab0 0%,
@@ -46,12 +50,23 @@ body {
 }
 
 .dark {
-  --color-bg: #121212;
+  --color-bg: #1a281a;
   --color-text: #ffffff;
   --gradient: linear-gradient(to left, #1a1a2e 0%, #16213e 50%, #1a1a40 100%);
+  --switcher-bg: rgba(56, 47, 34, 0.9);
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+  font-weight: $regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
 }

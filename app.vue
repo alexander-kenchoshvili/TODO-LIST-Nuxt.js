@@ -1,10 +1,4 @@
-<script setup lang="ts">
-const themeStore = useThemeStore();
-
-onMounted(() => {
-  themeStore.initializeMode();
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>

@@ -2,10 +2,42 @@
 export default defineNuxtConfig({
   css: ['@/assets/scss/fonts.scss', '@/assets/scss/main.scss'],
   modules: ['@pinia/nuxt'],
-  components: [{ path: './components', pathPrefix: false }],
+  components: [
+    {
+      path: './components',
+      pathPrefix: false,
+    },
+  ],
 
   vite: {
     assetsInclude: ['**/*.woff', '**/*.woff2'],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+            @import "~/assets/scss/mixins/_mixins.scss";
+          `,
+        },
+      },
+    },
+  },
+  app: {
+    head: {
+      script: [
+        {
+          innerHTML: `
+            try {
+              if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            } catch (_) {}
+          `,
+          type: 'text/javascript',
+        },
+      ],
+    },
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
