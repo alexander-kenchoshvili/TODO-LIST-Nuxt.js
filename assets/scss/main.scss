@@ -30,7 +30,7 @@ body {
 
 :root {
   --color-bg: #ffffff;
-  --color-text: #000000;
+  --color-text: #202427;
   --switcher-bg: rgba(12, 28, 58, 0.92);
   --gradient: linear-gradient(
     to left,
@@ -95,12 +95,15 @@ h6 {
 .fade-leave-active {
   transition:
     opacity 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+  opacity: 0;
+  visibility: hidden;
   transform: scale(0.9);
 }
 ul,

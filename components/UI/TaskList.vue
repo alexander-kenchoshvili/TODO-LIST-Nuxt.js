@@ -10,8 +10,16 @@ const sortTasks = ref(false);
 const openModal = ref(false);
 const taskData = ref();
 
+const displayedTasks = ref([...taskStore.tasks]);
+
+const updateFilteredTasks = (newTasks: TaskInterface[]) => {
+  displayedTasks.value = newTasks;
+};
+
 const sortedTasks = computed(() =>
-  sortTasks.value ? [...taskStore.tasks] : [...taskStore.tasks].reverse()
+  sortTasks.value
+    ? [...displayedTasks.value]
+    : [...displayedTasks.value].reverse()
 );
 
 const handleEdit = (task: TaskInterface) => {
@@ -69,6 +77,8 @@ const closeModal = () => {
       </ul>
     </div>
     <ProgressBar />
+
+    <TaskFilter @update:filteredTasks="updateFilteredTasks" />
   </div>
 
   <teleport to="body">
@@ -96,12 +106,11 @@ const closeModal = () => {
   &__tasks {
     position: relative;
     width: 410px;
-    max-height: 115px;
+    max-height: 85px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     padding-right: 16px;
-    gap: 4px;
     &::-webkit-scrollbar {
       width: 4px;
     }
@@ -129,7 +138,7 @@ const closeModal = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 4px;
+    padding: 6px 6px;
     border-radius: 12px;
     @include easeInOut(300ms, all);
     &:hover {
