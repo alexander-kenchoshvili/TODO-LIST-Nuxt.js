@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import EditIcon from '~/assets/icons/EditIcon.vue';
-import DeleteIcon from '~/assets/icons/DeleteIcon.vue';
-import type { TaskInterface } from '~/types/ContentType';
+import EditIcon from '@/assets/icons/EditIcon.vue';
+import DeleteIcon from '@/assets/icons/DeleteIcon.vue';
+import type { TaskInterface } from '@/types/ContentType';
 
 defineProps<{
   task: TaskInterface;
@@ -17,14 +17,16 @@ const handleEdit = (task: TaskInterface) => {
   taskData.value = { ...task };
   openModal.value = true;
 };
+
+const closeModal = () => {
+  openModal.value = false;
+};
+
 const updateTask = () => {
   if (taskData.value) {
     taskStore.updateTask(taskData.value.id, taskData.value.title);
     closeModal();
   }
-};
-const closeModal = () => {
-  openModal.value = false;
 };
 </script>
 

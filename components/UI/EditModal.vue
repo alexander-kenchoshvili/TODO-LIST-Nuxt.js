@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TaskInterface } from '~/types/ContentType';
+import type { TaskInterface } from '@/types/ContentType';
 
 defineProps<{
   data: TaskInterface;

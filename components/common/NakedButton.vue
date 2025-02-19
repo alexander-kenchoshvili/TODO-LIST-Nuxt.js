@@ -49,6 +49,7 @@ withDefaults(
   }
   &--hidden {
     visibility: hidden;
+    pointer-events: none;
   }
 }
 </style>

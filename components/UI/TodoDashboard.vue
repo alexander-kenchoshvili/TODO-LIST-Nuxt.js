@@ -14,7 +14,7 @@ const taskStore = useTaskStore();
     <div class="todo-list__top">
       <img
         class="todo-list__image"
-        src="../../assets/images/Illustration.png"
+        src="@/assets/images/Illustration.png"
         alt="todo"
       />
       <h1 class="todo-list__title text-bold">Today I need to</h1>

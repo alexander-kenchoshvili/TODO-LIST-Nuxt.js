@@ -7,9 +7,9 @@ export default defineNuxtConfig({
       path: './components',
       pathPrefix: false,
     },
-    { path: '~/components/ui', pathPrefix: false },
-    { path: '~/components/ui/ProgressBar', pathPrefix: false },
-    { path: '~/components/ui/tasks', pathPrefix: false },
+    { path: '~/components/UI', pathPrefix: false },
+    { path: '~/components/UI/ProgressBar', pathPrefix: false },
+    { path: '~/components/UI/tasks', pathPrefix: false },
   ],
   alias: {
     '@types': './types',

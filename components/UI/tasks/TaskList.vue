@@ -5,18 +5,17 @@ import type { TaskInterface } from '~/types/ContentType';
 const { $isDarkMode: isDarkMode } = useNuxtApp();
 const taskStore = useTaskStore();
 const sortTasks = ref(false);
-
 const displayedTasks = ref([...taskStore.tasks]);
-
-const updateFilteredTasks = (newTasks: TaskInterface[]) => {
-  displayedTasks.value = newTasks;
-};
 
 const sortedTasks = computed(() =>
   sortTasks.value
     ? [...displayedTasks.value]
     : [...displayedTasks.value].reverse()
 );
+
+const updateFilteredTasks = (newTasks: TaskInterface[]) => {
+  displayedTasks.value = newTasks;
+};
 </script>
 
 <template>
