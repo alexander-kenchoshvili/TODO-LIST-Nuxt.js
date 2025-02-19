@@ -53,6 +53,7 @@ const closeModal = () => {
       <DeleteIcon
         @click="taskStore.removeTask(task.id)"
         class="task-list__delete"
+        :class="{ 'task-list__delete--dark': isDarkMode }"
       />
     </div>
   </div>

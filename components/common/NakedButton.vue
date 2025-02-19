@@ -38,6 +38,7 @@ withDefaults(
   text-transform: capitalize;
   cursor: pointer;
   @include easeInOut(300ms, all);
+
   &:hover {
     background-color: var(--button-bg);
     color: #fff;

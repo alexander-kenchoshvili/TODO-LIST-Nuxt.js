@@ -16,6 +16,23 @@ export const useTaskStore = defineStore('tasks', {
     newTask: '',
   }),
 
+  getters: {
+    allTasksCompleted: (state) =>
+      state.tasks.length > 0 && state.tasks.every((task) => task.completed),
+
+    hasMixedTasks: (state) =>
+      state.tasks.some((task) => task.completed) &&
+      state.tasks.some((task) => !task.completed),
+
+    allTasksActive: (state) =>
+      state.tasks.length > 0 && state.tasks.every((task) => !task.completed),
+
+    showCheckAll: (state) =>
+      (state.tasks.some((task) => task.completed) &&
+        state.tasks.some((task) => !task.completed)) ||
+      (state.tasks.length > 0 && state.tasks.every((task) => !task.completed)),
+  },
+
   actions: {
     async fetchTasks() {
       const { $db } = useNuxtApp();
@@ -23,7 +40,7 @@ export const useTaskStore = defineStore('tasks', {
       this.tasks = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      })) as any;
+      })) as TaskInterface[];
     },
 
     async addTask() {

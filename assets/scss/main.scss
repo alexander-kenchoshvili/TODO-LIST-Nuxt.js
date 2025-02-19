@@ -54,13 +54,27 @@ body {
   --task-color: #202427;
   --scroll-bg: rgba(32, 36, 39, 0.1);
   --button-hover: #134896;
-  --modal-bg: #e4b238;
+  --modal-bg: linear-gradient(
+    to left,
+    #84fab0 0%,
+    #85f9bc 0%,
+    #88f8d7 0%,
+    #8bf6f5 0%,
+    #8eddf5 0%,
+    #8fd3f4 0%,
+    #f0c3fc 0%,
+    #d7befc,
+    #bcb1fc,
+    #a1aefc,
+    #94bdfc,
+    #94bdfc
+  );
   --progress-title: #202427;
   --progress-bg: rgba(32, 36, 39, 0.05);
 }
 
 .dark {
-  --color-bg: #1a281a;
+  --color-bg: #1b1b21;
   --color-text: #ffffff;
   --gradient: linear-gradient(to left, #1a1a2e 0%, #16213e 50%, #1a1a40 100%);
   --switcher-bg: rgba(56, 47, 34, 0.9);

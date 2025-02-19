@@ -45,15 +45,27 @@ const sortedTasks = computed(() =>
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @include maxq(mob-landscape) {
+    padding: 0 24px;
+  }
 
   &__content {
     position: relative;
+    @include maxq(mob-landscape) {
+      width: 100%;
+      max-width: 410px;
+      display: flex;
+      justify-content: center;
+    }
+    @include maxq(mob-portrait) {
+      max-width: 375px;
+    }
   }
 
   &__tasks {
     position: relative;
     width: 410px;
-    max-height: 85px;
+    height: 85px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -68,6 +80,10 @@ const sortedTasks = computed(() =>
       background: var(--scroll-bg);
       border-radius: 2px;
     }
+    @include maxq(mob-landscape) {
+      width: 100%;
+      max-width: 410px;
+    }
   }
   &__sort {
     position: absolute;
@@ -76,7 +92,7 @@ const sortedTasks = computed(() =>
     cursor: pointer;
     &--dark {
       g circle {
-        fill: rgb(236, 53, 53);
+        fill: #f2f2f2;
       }
     }
   }
@@ -105,6 +121,12 @@ const sortedTasks = computed(() =>
   }
   &__task-title {
     color: var(--task-color);
+    @include maxq(mob-portrait) {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 130px;
+      white-space: nowrap;
+    }
   }
   &__buttons {
     display: flex;
@@ -118,7 +140,7 @@ const sortedTasks = computed(() =>
   &__edit {
     &--dark {
       path {
-        stroke: rgb(236, 53, 53);
+        stroke: #f2f2f2;
       }
     }
   }

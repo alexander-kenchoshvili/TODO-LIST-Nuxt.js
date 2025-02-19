@@ -53,6 +53,11 @@ const progressCards = computed(() => {
   display: flex;
   gap: 30px;
   margin-top: 32px;
+  @include maxq(mob-portrait) {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
 
   &__card {
     display: flex;
@@ -63,8 +68,10 @@ const progressCards = computed(() => {
     padding: 16px;
     background: var(--progress-bg);
     border-radius: 8px;
-
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    @include maxq(mob-portrait) {
+      width: 100%;
+    }
   }
 
   &__inner {

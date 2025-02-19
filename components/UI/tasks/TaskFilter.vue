@@ -16,28 +16,6 @@ const filteredTasks = computed(() => {
   });
 });
 
-const allTasksCompleted = computed(
-  () =>
-    taskStore.tasks.length > 0 &&
-    taskStore.tasks.every((task) => task.completed)
-);
-
-const hasMixedTasks = computed(
-  () =>
-    taskStore.tasks.some((task) => task.completed) &&
-    taskStore.tasks.some((task) => !task.completed)
-);
-
-const allTasksActive = computed(
-  () =>
-    taskStore.tasks.length > 0 &&
-    taskStore.tasks.every((task) => !task.completed)
-);
-
-const showCheckAll = computed(
-  () => hasMixedTasks.value || allTasksActive.value
-);
-
 const clearCompleted = () => {
   taskStore.tasks
     .filter((task) => task.completed)
@@ -75,7 +53,7 @@ onMounted(() => {
     <Transition name="fade">
       <NakedButton
         btn-text="check all"
-        :hide-button="!showCheckAll"
+        :hide-button="!taskStore.showCheckAll"
         @click="checkedAllAsCompleted"
       />
     </Transition>
@@ -88,7 +66,7 @@ onMounted(() => {
     </Transition>
     <Transition name="fade">
       <NakedButton
-        :hide-button="!hasMixedTasks"
+        :hide-button="!taskStore.hasMixedTasks"
         :active="currentFilter === 'active'"
         btn-text="active"
         @click="changeFilter('active')"
@@ -96,7 +74,7 @@ onMounted(() => {
     </Transition>
     <Transition name="fade">
       <NakedButton
-        :hide-button="!hasMixedTasks"
+        :hide-button="!taskStore.hasMixedTasks"
         btn-text="completed"
         @click="changeFilter('completed')"
         :active="currentFilter === 'completed'"
@@ -104,7 +82,7 @@ onMounted(() => {
     </Transition>
     <Transition name="fade">
       <NakedButton
-        :hide-button="!allTasksCompleted"
+        :hide-button="!taskStore.allTasksCompleted"
         btn-text="clear complited"
         @click="clearCompleted"
       />
@@ -117,5 +95,9 @@ onMounted(() => {
   margin-top: 32px;
   display: flex;
   gap: 10px;
+  @include maxq(mob-landscape) {
+    gap: 4;
+    flex-wrap: wrap;
+  }
 }
 </style>

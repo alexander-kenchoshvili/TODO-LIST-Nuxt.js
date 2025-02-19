@@ -4,5 +4,9 @@ declare module '#app' {
     $toggleTheme: () => void;
   }
 }
-
+declare module '#app' {
+  interface NuxtApp {
+    $db: ReturnType<typeof getFirestore>;
+  }
+}
 export {};

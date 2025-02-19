@@ -55,6 +55,15 @@ const taskStore = useTaskStore();
     padding: 32px 0;
     position: relative;
     overflow: hidden;
+    @include maxq(mob-landscape) {
+      padding: 24px 8px;
+    }
+  }
+  &__image {
+    @include maxq(mob-landscape) {
+      width: 100px;
+      height: auto;
+    }
   }
   &__theme-controller {
     position: absolute;
@@ -76,6 +85,9 @@ const taskStore = useTaskStore();
     line-height: 29px;
     margin-top: 48px;
     @include ease(300, all);
+    @include maxq(mob-landscape) {
+      margin-top: 24px;
+    }
   }
   &__input-wrapper {
     margin-top: 52px;

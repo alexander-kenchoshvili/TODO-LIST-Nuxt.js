@@ -14,5 +14,8 @@
   width: 100%;
   height: 100vh;
   background-image: var(--gradient);
+  @include maxq(mob-landscape) {
+    padding: 16px;
+  }
 }
 </style>

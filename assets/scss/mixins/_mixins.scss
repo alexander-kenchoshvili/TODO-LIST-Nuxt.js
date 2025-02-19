@@ -21,3 +21,13 @@
 @mixin ease($duration, $property) {
   transition: $duration + 0ms ease $property;
 }
+$breakpoints: (
+  'mob-landscape': 760px,
+  'mob-portrait': 480px,
+);
+
+@mixin maxq($title) {
+  @media (max-width: map-get($breakpoints, $title)) {
+    @content;
+  }
+}
