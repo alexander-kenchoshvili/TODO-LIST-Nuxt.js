@@ -52,6 +52,7 @@ npm run lint:fix
 # Task Management
 
 - Create tasks (via button click or Enter key)
+- sort tasks
 - Edit existing tasks
 - Delete tasks
 - Filter tasks by completion status
