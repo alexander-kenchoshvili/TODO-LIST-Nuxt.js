@@ -5,7 +5,7 @@ export interface InputProps {
 }
 
 export interface TaskInterface {
-  id: number;
+  id: string;
   title: string;
   completed: boolean;
 }

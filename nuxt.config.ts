@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   alias: {
     '@types': './types',
   },
-
+  plugins: ['~/plugins/firebase'],
   vite: {
     assetsInclude: ['**/*.woff', '**/*.woff2'],
     css: {
