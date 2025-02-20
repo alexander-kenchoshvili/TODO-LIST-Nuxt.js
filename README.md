@@ -2,6 +2,11 @@
 
 A responsive task management web application built with Nuxt 3, featuring dark mode support and real-time data persistence.
 
+### Time Spent
+
+- **Start Date & Time:** February 17, 2025 – 6:00 PM
+- **End Date & Time:** February 19, 2025 – 12:00 AM
+
 ## Setup
 
 Make sure to install dependencies:
@@ -68,8 +73,9 @@ npm run lint:fix
 - Code splitting
 - TypeScript type safety
 - SCSS features:
+  ** BEM Metodology
   ** Reusable mixins
-  ** Global variables
+  \*\* Global variables
   \*\* Media queries
 
 ## UI/UX Considerations
